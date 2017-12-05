@@ -1,0 +1,125 @@
+<div id="siteBanner">
+    <div id="topRow" class="row">
+        <div class="logo col-lg-6">
+            <a href="index.html" class="navbar-left"><img src="shared/images/logo.png" /></a>
+        </div>
+		<div class= "col-lg-6 ui-widget">
+			<form class="form-inline my-2 my-lg-0" id="searchBar">
+			<div class="ui-widget">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="search"/>
+			</div>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchSubmit">Search</button>
+			</form>
+		</div>
+    </div>
+
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="banner" id="mainBanner">
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Replicants</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Tie-3</a>
+                        <a class="dropdown-item" href="#">Core-7</a>
+                        <a class="dropdown-item" href="#">Union-4</a>
+                        <a class="dropdown-item" href="#">Link-9</a>
+                        <a class="dropdown-item" href="inquire.html">Inquire</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other Products</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="joi.html">Joi</a>
+                        <a class="dropdown-item" href="#">Cars</a>
+                        <a class="dropdown-item" href="#">Guns</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="aboutus.html">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="faq.html">FAQ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<style>
+    .navbar-left img{
+    		width: 12em;
+    		height: 4em;
+    	}
+    	
+	#siteBanner{
+		background-color: #1c1c1c;
+	}
+    	
+	.nav-link{
+		color: #FFF;
+		font-family: 'Gruppo';
+		font-size: 18px;
+	}
+    	
+	.logo {
+		padding: 5px;
+	}
+	
+	#topRow{
+		margin: 0 5px 0 5px;
+	}
+	#searchBar{
+		float: right;
+		margin-top: 5px !important;
+	}
+	.navbar{
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+		padding-bottom: 0px;
+    }
+	.nav-item{
+		padding: 15px;
+		background-color: #2b2b2a;
+		margin-bottom: 0px;
+	}
+
+	.ui-autocomplete{
+		background-color: #FFF;
+		list-style: none;
+	}
+	
+	.ui-widget{
+		padding-left: 5px;
+	}
+</style>
+<script>
+  $( function() {
+    var availableTags = [
+      "Inquire",
+      "Joi"
+    ];
+    $( "#search" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  
+	$( "#searchSubmit" ).click(function() {
+	var input =  $("#search").val().toLowerCase() + ".html";
+	window.location.href = input;
+	});
+</script>

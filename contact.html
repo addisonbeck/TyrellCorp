@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Tyrell | More Human Than Human</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="shared/scripts/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="shared/scripts/jquery.validate.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<div id="nav"></div>
+			<div class="container">
+				<div class="page-header">
+					<h1>Contact The Tyrell Corporation</h1>      
+				</div>
+				<form id="target" action="contactResults.html" novalidate>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="firstName">First Name:</label>
+							<input type="name" class="form-control" id="firstName" placeholder="First Name" name="firstName" required>
+							<div class="invalid-feedback">
+								Please provide your first name.
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="lastName">Last Name:</label>
+							<input type="name" class="form-control" id="lastName" placeholder="Last Name" name="lastName" required>
+						</div>
+						<div class="invalid-feedback">
+							Please provide your last name.
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="email">Email:</label>
+							<input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+							<div class="invalid-feedback">
+								Please provide a valid email address.
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="reason">What is your inquiry?</label>
+							<textarea  type="text" class="form-control" rows="5" id="reason" placeholder="How can we help you?" name="reason" required></textarea>
+							<div class="invalid-feedback">
+								Please provide a reason for contact.
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-block" id="submit">Submit</button>
+				</form>
+			</div>
+			<footer class="main-footer">
+				<p>tyrell corp&#169 <br> addison beck</p>
+			</footer>
+	</body>
+	<style>
+		.container{
+			background-color: #FFF;
+			padding: 10px;
+		}
+		#submit{
+			border-radius: 20px;
+			background-color: #32cd32;
+			color: #FFF;
+			font-weight: 900;
+			font-size: 1.1em;
+		}
+		
+		#submit:hover{
+			background-color: #46d246;
+		}
+		
+		.form-control{
+			
+		}
+		
+		.form-control:focus{
+			border-color: #000 !important;
+			box-shadow: none !important;
+		}
+		
+		.error{
+			color: red;
+		}
+	</style>
+	<script>
+		$(function(){
+			$("#nav").load("shared/views/_nav.html");
+		});
+		
+		$( ".test a > img" ).mouseover(function() {
+        $(this).addClass("hoverContent")
+        .removeClass("angle")
+        .removeClass( "regContent");
+		});
+		
+		$( ".test a > img" ).mouseout(function() {
+        $(this).addClass("angle")
+        .addClass("regContent")
+        .removeClass("hoverContent");
+		});
+		
+		$.validator.setDefaults( {
+			submitHandler: function () {
+				return true;
+			}
+		} );
+
+		$( document ).ready( function () {
+			$( "#target" ).validate( {
+				rules: {
+					firstName: "required",
+					lastName: "required",
+					email: {
+						required: true,
+						email: true
+					},
+					reason: "required"
+				},
+				messages: {
+					firstName: "Please enter your first name",
+					lastName: "Please enter your last name",
+					email: "Please enter a valid email address",
+					reason: "Please enter the reason for your contact."
+				},
+				errorElement: "em",
+				errorPlacement: function ( error, element ) {
+					error.addClass( "help-block" );
+
+					if ( element.prop( "type" ) === "checkbox" ) {
+						error.insertAfter( element.parent( "label" ) );
+					} else {
+						error.insertAfter( element );
+					}
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-md-6" ).addClass( "has-error" ).removeClass( "has-success" );
+				},
+				unhighlight: function (element, errorClass, validClass) {
+					$( element ).parents( ".col-md-6" ).addClass( "has-success" ).removeClass( "has-error" );
+				}
+			} );
+			});
+			
+	</script>
+ </html>
+ 
+ 

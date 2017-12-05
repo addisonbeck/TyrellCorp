@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Tyrell | More Human Than Human</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="shared/scripts/jquery-3.2.1.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<div id="nav"></div>
+			<div class="container">
+				<p>Message recieved! Thanks for reaching out. We will get back to you shortly.</p>
+			</div>
+			<footer class="main-footer">
+				<p>tyrell corp&#169 <br> addison beck</p>
+			</footer>
+	</body>
+	<style>
+		.container{
+			background-color: #FFF;
+			padding: 10px;
+		}
+		.container p{
+			font-size: 2em;
+		}
+	</style>
+	<script>
+		$(function(){
+			$("#nav").load("shared/views/_nav.html");
+		});
+		
+		$( ".test a > img" ).mouseover(function() {
+        $(this).addClass("hoverContent")
+        .removeClass("angle")
+        .removeClass( "regContent");
+		});
+		
+		$( ".test a > img" ).mouseout(function() {
+        $(this).addClass("angle")
+        .addClass("regContent")
+        .removeClass("hoverContent");
+		});
+	</script>
+ </html>
+ 
+ 
