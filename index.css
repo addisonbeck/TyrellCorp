@@ -16,12 +16,16 @@ html, body{
 }
 
 #featuredProducts img, #behindTheScenes img {
-	max-height: 60%;
+
 	max-width: 60%;
 	margin-top: 20px;
 	padding: 10px;
 	background-color: #FFF
 	
+}
+
+#behindTheScenes img{
+	max-height: 60%;
 }
 #featuredProducts, #behindTheScenes{
 	margin: 0 30px 0 30px;
